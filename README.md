@@ -1,6 +1,6 @@
 # Project Description:
 
-The Car Collector App is a comprehensive platform designed for automobile enthusiasts to manage their car collections efficiently. Built using Django, Python, and PostgreSQL, this application allows users to catalog their vehicles, track fuel fillings, and manage modifications in a user-friendly interface.
+The Car Collector App is a comprehensive platform designed for automobile enthusiasts to manage their car collections efficiently. Built using Django Template Language, Django, Python, and PostgreSQL, this application allows users to catalog their vehicles, track fuel fillings, and manage modifications in a user-friendly interface.
 
 # Key Features:
 1. Car Management: 
