@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/cars/car-index.css' %}"/>
+{% endblock %}
+{% block content %}
+
+<section class="page-header">
+  <h1>Car List</h1>
+  <img src="{% static 'images/cool-car.svg' %}" alt="A cool car" />
+  <img src="{% static 'images/classic-car.svg' %}" alt="A classic car" />
+  <img src="{% static 'images/sports-car.svg' %}" alt="A sports car" />
+  <img src="{% static 'images/electric-car.svg' %}" alt="An electric car" />
+</section>
+
+<section class="card-container">
+  {% for car in cars %}
+    <div class="card">
+      <a href "{% url 'car-details' car.id}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img
+              src="{% static 'images/car-placeholder.svg' %}"
+              alt="A car image"
+            />
+          </div>
+          <h2 class="card-title">{{ car.make }} {{ car.model }}</h2>
+          <p>A {{ car.year }} model</p>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
