@@ -39,7 +39,7 @@ class Car(models.Model):
         # Use the 'reverse' function to dynamically find the URL for viewing this cat's details
         return reverse('cat-detail', kwargs={'cat_id': self.id})
     
-class filling (models.Model):
+class Filling (models.Model):
     date = models.DateField('filling date')
     gas = models.CharField(
         max_length=1,
