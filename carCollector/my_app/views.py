@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Car, Modification, Filling
-from .forms import FillingForm, ModificationForm
+from .forms import FillingForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.views.generic import ListView, DetailView
@@ -95,7 +95,7 @@ class ModificationDelete(LoginRequiredMixin, DeleteView):
     success_url = '/modifications/'
 
 @login_required
-def associate_modiffication(request, car_id, modification_id):
+def associate_modification(request, car_id, modification_id):
     Car.objects.get(id=car_id).modifications.add(modification_id)
     return redirect('car-detail', car_id=car_id)
 
