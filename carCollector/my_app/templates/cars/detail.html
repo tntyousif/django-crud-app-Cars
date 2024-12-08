@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/cars/car-detail.css' }}" />
 {% endblock %}
+
 {% block content %}
 <section class="car-container">
   <div class="car-img">
@@ -11,6 +13,62 @@
   <div class="car-details">
     <h1>{{ car.make }} {{ car.model }}</h1>
     <h2>Year: {{ car.year }}</h2>
+  
   </div>
+  <div class="cat-actions">
+    <a href="{% url 'cat-update' cat.id %}" class="btn warn">Edit</a>
+    <a href="{% url 'cat-delete' cat.id %}" class="btn danger">Delete</a>
+  </div>
+
 </section>
+
+<div class="filling-modification-container">
+  <h2>Gas Fillings</h2>
+    {% if car.gas_fillings %}
+      <ul>
+        {% for filling in car.gas_fillings %}
+          <li>
+            <strong>Date:</strong> {{ filling.date }} | 
+            <strong>Gas Type:</strong> {{ filling.gas_type }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No gas fillings recorded yet.</p>
+    {% endif %}
+  </section>
+  
+  <section class="add-gas-filling">
+    <h2>Add Gas Filling</h2>
+    <form method="post">
+      {% csrf_token %}
+      <label for="filling_date">Date:</label>
+      <input type="date" id="filling_date" name="filling_date" required>
+      <label for="gas_type">Gas Type:</label>
+      <select id="gas_type" name="gas_type" required>
+        <option value="Regular">Regular</option>
+        <option value="Premium">Premium</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Electric">Electric</option>
+      </select>
+      <button type="submit">Add Filling</button>
+    </form>
+  </section>
+
+  <section class="modification-container">
+    <h2>{{ car.make }}Modifications</h2>
+    {% if car.modifications %}
+      <ul>
+        {% for modification in car.modifications %}
+          <li>
+            <strong>Date:</strong> {{ modification.date }} | 
+            <strong>Description:</strong> {{ modification.description }}
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No modifications recorded yet.</p>
+    {% endif %}
+</div>
+
 {% endblock %}
