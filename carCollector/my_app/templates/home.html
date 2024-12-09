@@ -7,10 +7,10 @@
 {% block content %}
 <section class="logo-container">
     <div class="car-container">
-        <img src="{% static "images/splash.svg" %}" alt="">
+
     </div>
-    <img src="{% static "images/logotype.svg" %}" alt="">
-</section>
+
+  </section>
 {% if not user.is_authenticated %}
   <section>
     <form action="{% url 'home' %}" method="post" class="login">

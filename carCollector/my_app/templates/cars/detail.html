@@ -22,52 +22,100 @@
 
 </section>
 
-<div class="filling-modification-container">
-  <h2>Gas Fillings</h2>
-    {% if car.gas_fillings %}
-      <ul>
-        {% for filling in car.gas_fillings %}
-          <li>
-            <strong>Date:</strong> {{ filling.date }} | 
-            <strong>Gas Type:</strong> {{ filling.gas_type }}
-          </li>
-        {% endfor %}
-      </ul>
+
+<div class="fillings-modification-container">
+  <section class="fillings">
+    <div class="subsection-title">
+      <h2>Fillings</h2>
+      
+    </div>
+
+    <!--Filling form -->
+    <h3>Add a Filling</h3>
+    <form
+      action="{% url 'add-filling' car.id %}"
+      method="post"
+      class="subsection-content"
+      autocomplete="off"
+    >
+      {% csrf_token %} 
+      {{ filling_form.as_p }}
+      <button type="submit" class="btn submit">Add Filling</button>
+    </form>
+
+    {% comment %} Filling  {% endcomment %}
+    <h3>Past Fillings</h3>
+    {% if car.filling_set.all.count %}
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Meal</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for filling in car.filling_set.all %}
+          <tr>
+            <td>{{filling.date}}</td>
+            <td>{{filling.get_meal_display}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     {% else %}
-      <p>No gas fillings recorded yet.</p>
+      <div class="subsection-content">
+        <p>⚠️ {{ car.make }} {{ car.model }} has not been filled!</p>
+      </div>
     {% endif %}
+
   </section>
   
-  <section class="add-gas-filling">
-    <h2>Add Gas Filling</h2>
-    <form method="post">
-      {% csrf_token %}
-      <label for="filling_date">Date:</label>
-      <input type="date" id="filling_date" name="filling_date" required>
-      <label for="gas_type">Gas Type:</label>
-      <select id="gas_type" name="gas_type" required>
-        <option value="Regular">Regular</option>
-        <option value="Premium">Premium</option>
-        <option value="Diesel">Diesel</option>
-      </select>
-      <button type="submit">Add Filling</button>
-    </form>
-  </section>
+  <section class="modifications">
+    <div class="subsection-title">
+      <h2>Modifications</h2>
+      </div>
 
-  <section class="modification-container">
-    <h2>{{ car.make }}Modifications</h2>
-    {% if car.modifications %}
-      <ul>
-        {% for modification in car.modifications %}
-          <li>
-            <strong>Date:</strong> {{ modification.date }} | 
-            <strong>Description:</strong> {{ modification.description }}
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>No modifications recorded yet.</p>
-    {% endif %}
+      <!-- displaying a car's modifications -->
+    <h3>{{ car.make }} {{ car.model }}'s Modifications</h3>
+    <div class="subsection-content">
+      {% if car.modifications.count %} 
+        {% for modification in cat.modifications.all %}
+          <div class="modification-container">
+            <div class="color-block" style="background-color: {{ modification.color }}"></div>
+            <a href="{% url 'modification-detail' modification.id %}">
+              <p>A {{ modification.color }} {{ modification.name }}</p>
+            </a>
+            <form action="{% url 'remove-modification' cat.id modification.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-danger">Remove modification</button>
+            </form>
+          </div>
+        {% endfor %} 
+      {% else %}
+        <p class="no-modifications">{{ car.make }} {{ car.model }} doesn't have any modifications!</p>
+      {% endif %}
+    </div>
+
+    <h3>Available Modifications</h3>
+    <div class="subsection-content">
+      {% if modifications.count %} 
+        {% for modification in modifications.all %}
+          <div class="modification-container">
+            <div class="color-block" style="background-color: {{ modification.color }}"></div>
+            <a href="{% url 'modification-detail' modification.id %}">
+              <p>A {{ modification.color }} {{ modification.name }}</p>
+            </a>
+            <form action="{% url 'associate-modification' cat.id modification.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn submit">Give Modification</button>
+            </form>
+          </div>
+        {% endfor %} 
+      {% else %}
+        <p class="all-modifications">{{ car.make }} {{ car.model }} already has all the available modifications 🥳</p>
+      {% endif %}
+    </div>
+  </section>
 </div>
 
 {% endblock %}
