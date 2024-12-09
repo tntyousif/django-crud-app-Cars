@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/modifications/modification-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="card">
+  <div class="card-content">
+    <h2>{{ modification.name }}</h2>
+    <p>A {{ modification.brand }} modification</p>
+  </div>
+</div>
+<a href="{% url 'modification-update' modification.id %}" class="btn warn">Edit</a>
+<a href="{% url 'modification-delete' modification.id %}" class="btn danger">Delete</a>
+
+{% endblock %}
