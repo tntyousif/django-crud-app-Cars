@@ -34,10 +34,10 @@ class Car(models.Model):
     def __str__(self):
         return self.make + ' ' + self.model
     
-    # Define a method to get the URL for this particular cat instance
+    # Define a method to get the URL for this particular car instance
     def get_absolute_url(self):
-        # Use the 'reverse' function to dynamically find the URL for viewing this cat's details
-        return reverse('cat-detail', kwargs={'cat_id': self.id})
+        # Use the 'reverse' function to dynamically find the URL for viewing this car's details
+        return reverse('car-detail', kwargs={'car_id': self.id})
     
 class Filling (models.Model):
     date = models.DateField('filling date')
@@ -51,5 +51,3 @@ class Filling (models.Model):
     def __str__(self):
         return f"{self.get_gas_display()} on {self.date}"
 
-    class Meta:
-        ordering = ['-date']

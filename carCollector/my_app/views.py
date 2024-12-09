@@ -61,6 +61,7 @@ class CarCreate(LoginRequiredMixin, CreateView):
     model = Car
     fields = ['make', 'model', 'year']
     success_url = '/cars/'
+    template_name = 'main_app/car_form.html'
 
     def form_valid(self, form):
         form.instance.user = self.request.user
