@@ -1,3 +1,8 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/modifications/modification-index.css' %}" />
+{% endblock %} 
 {% block content %}
 
 <section class="page-header">
@@ -6,10 +11,8 @@
 
 <section class="card-container">
   {% for modification in modification_list %}
-    <div class="card" style="border-color: {{ modification.brand }}">
-      <div class="card-bg" style="background-color: {{ modification.color }}">
-
-      </div>
+    <div class="card" style="border-color: black ">
+      <div class="card-bg" style="background-color: black "></div>
       <a href="{% url 'modification-detail' modification.id %}">
         <div class="card-content">
           <h2>{{ modification.name }}</h2>

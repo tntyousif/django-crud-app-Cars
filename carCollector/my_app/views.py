@@ -39,12 +39,12 @@ def car_detail(request, car_id):
     car = Car.objects.get(id=car_id)
     
     fillings = FillingForm()
-    modifications_car_doesnt_have = Modification.objects.exclude(id__in = car.modifications.all().values_list('id'))
+    modifications = Modification.objects.all()
     
     return render(request, 'cars/detail.html', {
         'car': car,
         'fillings': fillings,
-        'modification': modifications_car_doesnt_have,
+        'modification': modifications
     })
 
 @login_required
