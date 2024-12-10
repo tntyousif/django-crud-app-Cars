@@ -74,6 +74,7 @@
   .card {
     width: 320px; /* Increase card width for larger screens */
     height: 350px; /* Set a more consistent height */
+    background-color: aliceblue;
   }
 
   .card h2 {

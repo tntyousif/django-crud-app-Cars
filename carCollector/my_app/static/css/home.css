@@ -30,8 +30,8 @@ main > section {
   margin-bottom: 20px; /* Added margin to separate logo from other content */
 }
 
-/* Cat container settings */
-.cat-container {
+/* Car container settings */
+.car-container {
   width: 80%;
   margin-bottom: 20px; /* Added margin to separate it from other sections */
 }
@@ -117,6 +117,7 @@ main > section {
       border-radius: var(--card-border-radius);
       box-shadow: var(--card-box-shadow);
       width: 100%;
+      background-color: blueviolet;
   }
 
   /* Adjust logo size for larger screens */

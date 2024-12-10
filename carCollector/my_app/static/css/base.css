@@ -29,18 +29,19 @@ html {
       'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
       'Helvetica Neue', sans-serif;
     min-height: 100vh;
-    --nav-bg: rgba(104, 197, 248, 0.7);
-    --nav-bg-ff: rgba(104, 197, 248, 0.9);
-    --borders: rgb(36, 116, 248) solid 2px;
-    --text-color: rgb(17, 20, 17);
-    --link-hover-color: rgb(16, 56, 158);
-    --button-bg: rgb(245, 245, 245);
-    --button-bg-hover: rgb(226, 226, 226);
-    --submit: rgb(26, 128, 0);
-    --warn: rgb(255, 102, 0);
-    --danger: rgb(220, 20, 30);
-    --secondary: rgb(57, 57, 57);
-    --card-box-shadow: 5px 5px 6px -1px #aaa;
+    --nav-bg: rgba(110, 46, 248, 0.7); /* Soft blue for navigation bar background */
+    --nav-bg-ff: rgba(0, 254, 148, 0.9); /* Slightly darker blue for focused navigation */
+    --borders: rgb(200, 200, 200) solid 2px; /* Light gray borders */
+    --text-color: rgb(30, 30, 30); /* Dark gray for primary text */
+    --link-hover-color: rgb(9, 240, 86); /* Darker blue for link hover effect */
+    --button-bg: rgb(245, 245, 245); /* Light gray for button background */
+    --button-bg-hover: rgb(173, 172, 172); /* Slightly darker gray for button hover */
+    --submit: rgb(34, 193, 34); /* Calming green for submit button */
+    --warn: rgb(255, 174, 0); /* Soft orange for warnings */
+    --danger: rgb(255, 69, 58); /* Soft red for error messages */
+    --secondary: rgb(80, 80, 80); /* Muted gray for secondary button */
+    --card-box-shadow: 5px 5px 6px -1px rgba(0, 0, 0, 0.1); /* Soft shadow for card elements */
+    background-color: rgb(203, 201, 198);
     --font-xtreme: 4.2rem;
     --font-xxl: 3.6rem;
     --font-xl: 2.4rem;
@@ -200,8 +201,8 @@ html {
     }
   
     .header-logo-container {
-      width: 213px;
-      height: 50px;
+      width: auto;
+      height: 80px;
     }
     .header-logo-container img {
       height: 100%;
@@ -275,7 +276,7 @@ html {
   
       nav,
       .header-logo-container {
-        background: rgba(104, 197, 248, 0.6);
+        background: var(--nav-bg);
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
       }

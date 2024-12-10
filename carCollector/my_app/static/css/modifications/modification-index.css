@@ -55,6 +55,15 @@
   font-size: var(--font-reg);
 }
 
+.card:hover {
+  transform: translateY(-10px); /* Slight hover effect for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.card > a:hover {
+  color: var(--link-hover-color); /* Color change on hover */
+  text-decoration: underline; /* Underline text on hover */
+}
 .page-header > img {
   margin-left: 10px;
 }
