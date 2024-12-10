@@ -1,38 +1,104 @@
 .card-container {
-    padding: 0 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around; /* Distribute cards evenly */
+  flex-wrap: wrap;
+  gap: 30px; /* Add space between cards */
+  padding: 30px; /* Add padding around the container */
+}
+
+.card {
+  width: 280px; /* Set width to a moderate size */
+  height: auto; /* Allow card height to adjust based on content */
+  margin: 10px;
+  border: var(--borders); /* Maintain the border color defined in the root */
+  box-shadow: var(--card-box-shadow); /* Use the box shadow for depth */
+  border-radius: 12px; /* More rounded corners for a modern feel */
+  overflow: hidden; /* Ensure content stays within rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Slight hover effect for depth */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.card-content {
+  padding: 20px; /* Add extra padding inside the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Center text */
+}
+
+.usr-img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Slightly round image corners */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  margin-bottom: 15px; /* Add space between the image and text */
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: 2.2rem; /* Larger title for better emphasis */
+  font-weight: 600;
+  color: var(--text-color);
+  text-transform: capitalize; /* Capitalize first letter of each word */
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 1.8rem; /* Larger text for description */
+  color: var(--secondary); /* Use a secondary color for description */
+  line-height: 1.5; /* Improve readability by increasing line spacing */
+}
+
+.card > a {
+  text-decoration: none; /* Remove text underline */
+  color: var(--text-color); /* Use the main text color */
+  font-weight: bold;
+  margin-top: 15px; /* Add spacing above link */
+  display: block;
+}
+
+.card > a:hover {
+  color: var(--link-hover-color); /* Color change on hover */
+  text-decoration: underline; /* Underline text on hover */
+}
+
+@media only screen and (min-width: 768px) {
+  .card-container {
+    justify-content: space-between; /* Space cards more evenly on larger screens */
   }
-  
+
   .card {
-    width: 275px;
-    margin: 10px;
-    border: var(--borders);
-    box-shadow: var(--card-box-shadow);
+    width: 320px; /* Increase card width for larger screens */
+    height: 350px; /* Set a more consistent height */
   }
-  
-  .card-content {
-    padding: 10px;
-    width: 100%;
-  }
-  
-  .usr-img {
-    width: 100%;
-    border-radius: var(--card-border-radius);
-  }
-  
-  .card > a {
-    text-decoration: none;
-    color: var(--text-color);
-  }
-  
+
   .card h2 {
-    margin: 10px 0;
-    font-size: var(--font-xl);
+    font-size: 2.5rem; /* Slightly larger titles on bigger screens */
   }
-  
+
   .card p {
-    margin: 5px 0;
-    font-size: var(--font-reg);
+    font-size: 2rem; /* Increase description font size */
   }
+}
+
+@media only screen and (min-width: 1024px) {
+  .card-container {
+    justify-content: space-evenly; /* Evenly distribute cards on very large screens */
+  }
+
+  .card {
+    width: 350px; /* Set cards to be larger on widescreens */
+  }
+
+  .card h2 {
+    font-size: 2.8rem; /* Increase title size even more */
+  }
+
+  .card p {
+    font-size: 2.2rem; /* Increase description font size for readability */
+  }
+}

@@ -33,7 +33,7 @@ html {
     --nav-bg-ff: rgba(104, 197, 248, 0.9);
     --borders: rgb(36, 116, 248) solid 2px;
     --text-color: rgb(17, 20, 17);
-    --link-hover-color: rgb(212, 230, 16);
+    --link-hover-color: rgb(16, 56, 158);
     --button-bg: rgb(245, 245, 245);
     --button-bg-hover: rgb(226, 226, 226);
     --submit: rgb(26, 128, 0);
@@ -202,7 +202,8 @@ html {
     .header-logo-container {
       width: 213px;
       height: 50px;
-    }    .header-logo-container img {
+    }
+    .header-logo-container img {
       height: 100%;
       width: auto;
     }
@@ -258,8 +259,8 @@ html {
     .header-logo-container {
       /* visual fix to help align logo */
       padding-top: 6px;
-      width: 180px;
-      height: 155px;
+      width: 120px;
+      height: 100px;
     }
     .header-logo-container img {
       height: 100%;
@@ -279,4 +280,24 @@ html {
         backdrop-filter: blur(3px);
       }
     }
+  }
+  .header-logo-container img {
+    height: 100%;
+    width: auto;
+  }
+
+  #logout-form button {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+  }
+  
+  #logout-form button:hover {
+    color: var(--link-hover-color);
   }

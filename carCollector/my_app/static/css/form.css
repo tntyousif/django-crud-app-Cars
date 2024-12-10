@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 1.8rem; /* Increased font size for form elements */
 }
 
 table {
@@ -15,7 +16,7 @@ th {
   padding: 6px 20px 0 0;
   font-weight: normal;
   vertical-align: top;
-  font-size: var(--font-reg);
+  font-size: 2rem; /* Increased font size for table headers */
 }
 
 td {
@@ -24,16 +25,19 @@ td {
 
 td > * {
   width: 100%;
-  padding: 2px 4px;
-  font-size: var(--font-l);
+  padding: 8px 16px; /* Increased padding for better spacing */
+  font-size: 1.8rem; /* Increased font size for input fields, selects, etc. */
 }
 
 td > textarea {
-  height: calc(4 * var(--font-l) + 8px);
+  height: calc(4 * 1.8rem + 8px); /* Adjusted height based on larger font size */
   font-family: inherit;
+  font-size: 1.8rem; /* Increased font size for textarea */
 }
 
 .btn {
   align-self: flex-end;
   margin-right: 40px;
+  font-size: 1.8rem; /* Increased font size for buttons */
+  padding: 12px 24px; /* Increased padding for buttons */
 }

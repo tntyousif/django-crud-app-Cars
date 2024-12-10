@@ -1,86 +1,126 @@
+/* Main container styles */
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  
-  main > section {
-    width: 100%;
-    padding: 10px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .header-logo-container {
-    display: none;
-  }
-  
-  .logo-container {
-    max-width: 375px;
-  }
-  
-  .cat-container {
-    width: 80%;
-  }
-  
-  .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .login h1 {
-    font-size: clamp(3.2rem, 3vw, 4.8rem);
-    margin: 10px 0;
-  }
-  
-  .login > p {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 14px 0 0px;
-  }
-  
-  .login label {
-    font-size: var(--font-reg);
-    margin-bottom: 6px;
-  }
-  
-  .login input {
-    font-size: var(--font-l);
-    padding: 2px 4px;
-  }
-  
-  .login .btn {
-    align-self: flex-end;
-    margin-right: 0;
-    margin-top: 16px;
-  }
-  
-  @media only screen and (min-width: 768px) {
-    main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Ensures proper box-sizing for padding */
+}
+
+/* Section styling */
+main > section {
+  width: 100%;
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Logo container adjustments */
+.header-logo-container {
+  display: none;
+}
+
+.logo-container {
+  max-width: 375px;
+  width: 100%;
+  margin-bottom: 20px; /* Added margin to separate logo from other content */
+}
+
+/* Cat container settings */
+.cat-container {
+  width: 80%;
+  margin-bottom: 20px; /* Added margin to separate it from other sections */
+}
+
+/* Login form container styling */
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 20px; /* Space between login and other sections */
+}
+
+/* Login header (h1) */
+.login h1 {
+  font-size: clamp(3.2rem, 3vw, 4.8rem);
+  margin: 10px 0;
+  text-align: center; /* Center align the header text */
+  color: var(--text-color); /* Ensuring text color matches */
+}
+
+/* Paragraph in login section */
+.login > p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 14px 0 0;
+}
+
+/* Label styling for form fields */
+.login label {
+  font-size: var(--font-reg);
+  margin-bottom: 6px;
+  color: var(--text-color); /* Ensuring label text matches the theme */
+}
+
+/* Input fields in the login form */
+.login input {
+  font-size: var(--font-l);
+  padding: 12px;
+  width: 100%;
+  border-radius: 4px; /* Adding rounded borders for inputs */
+  border: 1px solid #ccc; /* Adding border color for visibility */
+  box-sizing: border-box;
+}
+
+/* Button styling in the login form */
+.login .btn {
+  align-self: flex-end;
+  margin-right: 0;
+  margin-top: 16px;
+  padding: 12px 24px;
+  font-size: var(--font-l);
+  width: 100%;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.login .btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Responsive styles for larger screens */
+@media only screen and (min-width: 768px) {
+  main {
       justify-content: space-around;
-    }
-  
-    main > section {
+  }
+
+  main > section {
       width: 40%;
-    }
-  
-    .login {
+  }
+
+  .login {
       border: var(--borders);
       padding: 20px;
       border-radius: var(--card-border-radius);
       box-shadow: var(--card-box-shadow);
       width: 100%;
-    }
-  
-    .logo-container {
-      max-width: 520px;
-    }
   }
+
+  /* Adjust logo size for larger screens */
+  .logo-container {
+      max-width: 520px;
+  }
+}
