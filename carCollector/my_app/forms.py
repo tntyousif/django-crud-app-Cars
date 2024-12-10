@@ -7,7 +7,7 @@ class FillingForm(forms.ModelForm):
         fields = ['date', 'gas']
         widgets = {
             'date': forms.DateInput(
-                format=('%d/%m/%Y'),
+                format=('%Y-%m-%d'),
                 attrs={
                     'placeholder': 'Select a date',
                     'type': 'date'

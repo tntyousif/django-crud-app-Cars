@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/cars/car-detail.css' %}" />
+<link rel="stylesheet" href="{% static 'css/cars/car-details.css' %}"/>
 {% endblock %}
 
 {% block content %}
@@ -39,7 +39,7 @@
       autocomplete="off"
     >
       {% csrf_token %} 
-      {{ filling_form.as_p }}
+      {{ fillings.as_p }}
       <button type="submit" class="btn submit">Add Filling</button>
     </form>
 
@@ -50,14 +50,14 @@
         <thead>
           <tr>
             <th>Date</th>
-            <th>Meal</th>
+            <th>Gas</th>
           </tr>
         </thead>
         <tbody>
           {% for filling in car.filling_set.all %}
           <tr>
             <td>{{filling.date}}</td>
-            <td>{{filling.get_meal_display}}</td>
+            <td>{{filling.get_gas_display}}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -79,13 +79,13 @@
     <h3>{{ car.make }} {{ car.model }}'s Modifications</h3>
     <div class="subsection-content">
       {% if car.modifications.count %} 
-        {% for modification in cat.modifications.all %}
+        {% for modification in car.modifications.all %}
           <div class="modification-container">
             <div class="color-block" style="background-color: {{ modification.color }}"></div>
             <a href="{% url 'modification-detail' modification.id %}">
               <p>A {{ modification.color }} {{ modification.name }}</p>
             </a>
-            <form action="{% url 'remove-modification' cat.id modification.id %}" method="post">
+            <form action="{% url 'remove-modification' car.id modification.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn btn-danger">Remove modification</button>
             </form>
@@ -105,7 +105,7 @@
             <a href="{% url 'modification-detail' modification.id %}">
               <p>A {{ modification.color }} {{ modification.name }}</p>
             </a>
-            <form action="{% url 'associate-modification' cat.id modification.id %}" method="post">
+            <form action="{% url 'associate-modification' car.id modification.id %}" method="post">
               {% csrf_token %}
               <button type="submit" class="btn submit">Give Modification</button>
             </form>
