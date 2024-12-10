@@ -6,9 +6,9 @@
 {% block content %}
 
 <div class="card">
-  <div class="card-content">
+  <div class="card-content" >
     <h2>{{ modification.name }}</h2>
-    <p>A {{ modification.brand }} {{ modification.name }} modification</p>
+    <p>A {{ modification.color }} {{ modification.brand }} {{ modification.name }}</p>
   </div>
 </div>
 <a href="{% url 'modification-update' modification.id %}" class="btn warn">Edit</a>

@@ -37,14 +37,16 @@ def car_index(request):
 @login_required
 def car_detail(request, car_id):
     car = Car.objects.get(id=car_id)
+
+    modifications_car_doesnt_have = Modification.objects.exclude(id__in = car.modifications.all().values_list('id'))
     
     fillings = FillingForm()
-    modifications = Modification.objects.all()
+   
     
     return render(request, 'cars/detail.html', {
         'car': car,
         'fillings': fillings,
-        'modification': modifications
+        'modifications': modifications_car_doesnt_have
     })
 
 @login_required
@@ -77,7 +79,7 @@ class CarDelete(LoginRequiredMixin, DeleteView):
 # CBVs for Modification
 class ModificationCreate(LoginRequiredMixin, CreateView):
     model = Modification
-    fields = ['name', 'brand']
+    fields = ['name', 'brand', 'color']
     success_url = '/modifications/'
 
 class ModificationList(LoginRequiredMixin, ListView):
@@ -88,7 +90,7 @@ class ModificationDetail(LoginRequiredMixin, DetailView):
 
 class ModificationUpdate(LoginRequiredMixin, UpdateView):
     model = Modification
-    fields = ['name', 'brand']
+    fields = ['name', 'brand', 'color']
 
 class ModificationDelete(LoginRequiredMixin, DeleteView):
     model = Modification

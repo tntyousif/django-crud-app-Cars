@@ -11,8 +11,8 @@
 
 <section class="card-container">
   {% for modification in modification_list %}
-    <div class="card" style="border-color: black ">
-      <div class="card-bg" style="background-color: black "></div>
+    <div class="card" style="border-color: {{ modification.color }} ">
+      <div class="card-bg" style="background-color: {{ modification.color }} "></div>
       <a href="{% url 'modification-detail' modification.id %}">
         <div class="card-content">
           <h2>{{ modification.name }}</h2>
