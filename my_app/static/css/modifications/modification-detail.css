@@ -1,52 +1,85 @@
 main {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    min-height: auto;
-  }
-  
-  .card {
-    width: 224px;
-    height: 224px;
-    margin: 25px 25px 15px 40px;
-    border: solid 2px;
-    box-shadow: var(--card-box-shadow);
-    position: relative;
-  }
-  
-  .card-bg {
-    opacity: 0.4;
-    position: absolute;
-    display: inline-flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .card-content {
-    padding: 15px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    flex-direction: column;
-    color: var(--text-color);
-  }
-  
-  .btn {
-    margin-bottom: 15px;
-  }
-  
-  .card h2 {
-    margin: 7px 0;
-    font-size: var(--font-xl);
-    z-index: 1;
-  }
-  
-  .card p {
-    margin: 0;
-    font-size: var(--font-reg);
-    z-index: 1;
-  }
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start;
+  min-height: 100vh; /* Ensure full height */
+  background-color: #e8f0f2; /* Light pastel background */
+  padding: 40px;
+}
+
+.card {
+  width: 300px; /* Fixed width for consistency */
+  margin: 20px;
+  border: none; /* No border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: relative;
+  overflow: hidden; /* Ensure child elements respect the border radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  background-color: #ffffff; /* White background for cards */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card-bg {
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #ff7f50, #ff6f61); /* Coral gradient background */
+}
+
+.card-content {
+  padding: 20px; /* Increased padding for better spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content */
+  justify-content: center; /* Center content */
+  color: #333; /* Dark text for readability */
+  z-index: 1; /* Ensure content is above background */
+  position: relative; /* For stacking context */
+  text-align: center; /* Center text alignment */
+}
+
+.btn {
+  margin-top: 15px; /* Space above button */
+  padding: 12px 24px; /* Button padding */
+  background-color: #5cb85c; /* Green button color */
+  color: #ffffff; /* Button text color */
+  border: none; /* No border */
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer; /* Pointer on hover */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+#Del {
+  background-color: #d9534f; /* Red button color */
+}
+
+.btn:hover {
+  background-color: #4cae4c; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+#Del:hover {
+  background-color: #c9302c; /* Darker red on hover */
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: 1.8em; /* Increased font size for headings */
+  font-weight: 600; /* Semi-bold text */
+  color: #ff6f61; /* Heading color */
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.1em; /* Slightly larger font size for readability */
+  color: rgba(0, 0, 0, 0.7); /* Dark text for contrast */
+  line-height: 1.5; /* Improved line height for readability */
+}

@@ -87,7 +87,7 @@
             </a>
             <form action="{% url 'remove-modification' car.id modification.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn btn-danger">Remove modification</button>
+              <button type="submit" class="btn btn-danger" id="Del">Remove Mod</button>
             </form>
           </div>
         {% endfor %} 
@@ -107,7 +107,7 @@
             </a>
             <form action="{% url 'associate-modification' car.id modification.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn submit">Give Modification</button>
+              <button type="submit" class="btn submit">Add Mod</button>
             </form>
           </div>
         {% endfor %} 
