@@ -1,37 +1,43 @@
 .card-container {
-  padding: 0 40px;
+  padding: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: #eceff1; /* Soft grey background */
 }
 
 .card {
-  width: 224px;
-  height: 224px;
-  margin: 10px;
-  border: solid 2px;
-  box-shadow: var(--card-box-shadow);
-  position: relative;
+  width: 260px;
+  height: 280px;
+  margin: 20px;
+  border: none; /* No border for a cleaner look */
+  border-radius: 20px; /* More pronounced rounded corners */
+  overflow: hidden; /* Ensures child elements respect the border radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Strong shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  position: relative; /* For absolute positioning of child elements */
 }
 
 .card-bg {
-  opacity: 0.4;
   position: absolute;
-  display: inline-flex;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  filter: blur(5px); /* Blur effect for background */
 }
 
 .card-content {
-  padding: 15px;
+  padding: 20px;
   height: 100%;
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
   flex-direction: column;
+  position: relative; /* Position relative for z-index usage */
+  z-index: 1; /* Ensures content is above the background */
+  text-align: center; /* Center text alignment */
 }
 
 .card > a {
@@ -42,32 +48,38 @@
   height: 100%;
   display: inline-block;
   text-decoration: none;
-  color: var(--text-color);
+  color: #ffffff; /* White text for visibility */
+  transition: color 0.2s ease; /* Smooth color transition */
+  z-index: 2; /* Ensure the link is above other elements */
 }
 
 .card h2 {
-  margin: 7px 0;
-  font-size: var(--font-xl);
+  margin: 10px 0;
+  font-size: 2em; /* Increased font size for headings */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
 }
 
 .card p {
   margin: 0;
-  font-size: var(--font-reg);
+  font-size: 1.2em; /* Increased font size for description */
+  color: rgba(255, 255, 255, 0.85); /* Slightly transparent text */
 }
 
 .card:hover {
-  transform: translateY(-10px); /* Slight hover effect for depth */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  transform: translateY(-5px); /* Slight lift effect on hover */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
 
 .card > a:hover {
-  color: var(--link-hover-color); /* Color change on hover */
+  color: #ffeb3b; /* Bright color change on hover */
   text-decoration: underline; /* Underline text on hover */
 }
+
 .page-header > img {
-  margin-left: 10px;
+  margin-left: 15px;
+  transition: transform 0.2s ease; /* Smooth transition for images */
 }
 
-.page-header > img:first-of-type {
-  margin-left: 15px;
+.page-header > img:hover {
+  transform: scale(1.1); /* Slightly larger on hover */
 }
