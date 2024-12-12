@@ -43,7 +43,11 @@ so that I can keep detailed records of my collection and its maintenance.
 - I can create an account and log in securely.
 My data is saved and accessible only to me.
 
-# MocUp
+# Plan:
+## ERD
+<img src="/Public/Plan/imgs/ERD/Screenshot 2024-12-04 135443.png">
+
+## MocUp
 1. <img src="/Public/Plan/imgs/MocUp/index.png" >
 2. <img src="/Public/Plan/imgs/MocUp/SignUp.png" >
 3. <img src="/Public/Plan/imgs/MocUp/SignIn.png" >
