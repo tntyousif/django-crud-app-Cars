@@ -123,3 +123,6 @@ My data is saved and accessible only to me.
 3. Confirm logout success.
 
 
+### Future work:
+1. Adding pic's for the Car's and the Mod's
+2. Making the wibsite accessible form the mobile
