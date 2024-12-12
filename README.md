@@ -124,5 +124,6 @@ My data is saved and accessible only to me.
 
 
 ### Future work:
-1. Adding pic's for the Car's and the Mod's
-2. Making the wibsite accessible form the mobile
+1. Adding pic's for the Car's and the Mod's API
+2. Giving the user the choice for using his photos 
+3. Making the wibsite accessible form the mobile
