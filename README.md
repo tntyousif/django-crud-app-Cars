@@ -1,5 +1,6 @@
-# Project Description:
+# Title: Car Collection
 
+## Project Description:
 The Car Collector App is a comprehensive platform designed for automobile enthusiasts to manage their car collections efficiently. This application allows users to catalog their vehicles, track fuel fillings, and manage modifications in a user-friendly interface.
 
 ### Technologys used 
@@ -23,7 +24,6 @@ Secure user authentication allows individuals to create accounts, log in, and ma
 
 
 # User Story
-## Title: Car Collection
 As a car enthusiast,
 I want to be able to add my cars, track fuel fillings, and manage modifications,
 so that I can keep detailed records of my collection and its maintenance.
